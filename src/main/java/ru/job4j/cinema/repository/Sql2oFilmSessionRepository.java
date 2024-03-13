@@ -17,7 +17,7 @@ public class Sql2oFilmSessionRepository implements FilmSessionRepository {
     @Override
     public Collection<FilmSession> findAll() {
         try (var connection = sql2o.open()) {
-            var query = connection.createQuery("SELECT * FROM film_session");
+            var query = connection.createQuery("SELECT * FROM film_sessions");
             return query.setColumnMappings(FilmSession.COLUMN_MAPPING).executeAndFetch(FilmSession.class);
         }
     }

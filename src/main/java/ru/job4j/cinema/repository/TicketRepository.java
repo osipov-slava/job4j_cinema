@@ -9,5 +9,9 @@ public interface TicketRepository {
 
     Optional<Ticket> save(Ticket ticket);
 
+    Optional<Ticket> findById(int id);
+
+    boolean deleteById(int id);
+
     Collection<Ticket> findAll();
 }
