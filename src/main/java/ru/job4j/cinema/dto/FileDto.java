@@ -27,5 +27,4 @@ public class FileDto {
         this.content = content;
     }
 
-
 }
