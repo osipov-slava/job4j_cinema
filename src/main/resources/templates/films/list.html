@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+    <script th:src="@{/js/code.jquery.com_jquery-3.7.0.min.js}"></script>
+    <script th:src="@{/js/bootstrap.min.js}"></script>
+
+    <title>Cinema</title>
+</head>
+
+<body>
+<div class="container-fluid p-0">
+    <header th:insert="blocks/header :: header"></header>
+    <div class="container mt-4">
+        <h4>Movie list</h4>
+        <div class="row">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th class="col-2" scope="col">Title</th>
+                    <th class="col-8" scope="col">Description</th>
+                    <th scope="col">Year</th>
+                    <th scope="col">Genre</th>
+                    <th scope="col">Minimal Age</th>
+                    <th scope="col">Duration(min)</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="entry: ${films}" th:with="film=${entry.value}">
+                    <td th:text="${film.id}" />
+                    <td><a th:text="${film.name}" th:href="@{/films/{filmId}(filmId=${film.id})}"></a></td>
+                    <td th:text="${film.description}"/>
+                    <td th:text="${film.year}"/>
+                    <td th:text="${film.genre}"/>
+                    <td th:text="${film.minimalAge}"/>
+                    <td th:text="${film.duration}"/>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <footer th:insert="blocks/footer :: footer"></footer>
+</div>
+</body>
+</html>

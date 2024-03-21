@@ -27,8 +27,8 @@ public class SimpleFilmService implements FilmService {
         Map<Integer, FilmDto> filmsDto = new ConcurrentHashMap<>();
         for (Film film : films) {
             var filmDto = new FilmDto(
-                    film.getId(), film.getName(), film.getDescription(), film.getYear(),
-                    genres.get(film.getGenreId()).getName(), film.getMinimalAge(), film.getDuration());
+                    film.getId(), film.getName(), film.getDescription(), film.getYear(), genres.get(film.getGenreId()).getName(),
+                    film.getMinimalAge(), film.getDuration(), film.getFileId());
             filmsDto.put(film.getId(), filmDto);
         }
         return filmsDto;

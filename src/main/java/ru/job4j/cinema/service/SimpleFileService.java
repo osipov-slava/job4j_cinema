@@ -42,7 +42,7 @@ public class SimpleFileService implements FileService {
     }
 
     private String getNewFilePath(String sourceName) {
-        return storageDirectory + java.io.File.separator + UUID.randomUUID() + sourceName;
+        return storageDirectory + java.io.File.separator + sourceName;
     }
 
     private void writeFileBytes(String path, byte[] content) {

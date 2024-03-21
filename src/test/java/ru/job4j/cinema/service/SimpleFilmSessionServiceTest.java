@@ -45,7 +45,7 @@ public class SimpleFilmSessionServiceTest {
         when(hallService.findAll()).thenReturn(hallsMap);
 
         var expectedFilmDtos = Map.of(2, new FilmDto(2, "Dune: Part Two", "description",
-                2024, "Sci Fi", 13, 166));
+                2024, "Sci Fi", 13, 166, 1));
         when(filmService.findAll()).thenReturn(expectedFilmDtos);
 
         var localDateTime = LocalDateTime.now();
