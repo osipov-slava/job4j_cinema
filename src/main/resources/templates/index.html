@@ -15,15 +15,15 @@
             <div class="container mt-4">
                 <h3>Implementation of the project 'Cinema' in accordance with specifications Job4j course</h3>
                 <ul class="mt-3">
-                    <li><a th:href="@{/shedules}">Schedule</a></li>
-                    <li><a th:href="@{/movies}">Movie base</a></li>
+                    <li><a th:href="@{/filmSessions}">Schedule</a></li>
+                    <li><a th:href="@{/films}">List of movies</a></li>
                 </ul>
                 <p>In project used technologies: <b>Spring Boot, Thymeleaf, Bootstrap, Liquibase, Sql2o, PostgreSQL, H2, Mockito</b></p>
                 <p>Patterns: <b>Model View Controller(MVC), Data Transfer Object(DTO)</b></p>
                 <p>There’s a password authorization, create user, movie list, movie page, movie theater schedule, ticket selection page.</p>
                 <p>Messages with successful or unsuccessful buying ticket.</p>
                 <p>No administrative part, data is updated through the database.</p>
-                <p>Images keep in not static folder.</p>
+                <p>Posters keep in not static folder.</p>
                 <p>Test coverage 55%.</p>
             </div>
             <footer th:insert="blocks/footer :: footer"></footer>

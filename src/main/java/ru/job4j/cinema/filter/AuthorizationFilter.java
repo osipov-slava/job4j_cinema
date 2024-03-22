@@ -16,6 +16,7 @@ public class AuthorizationFilter extends HttpFilter {
 
     @Override
     protected void doFilter(HttpServletRequest request, HttpServletResponse response, FilterChain chain) throws IOException, ServletException {
+
         var uri = request.getRequestURI();
         if (isAlwaysPermitted(uri)) {
             chain.doFilter(request, response);
@@ -33,12 +34,13 @@ public class AuthorizationFilter extends HttpFilter {
     private boolean isAlwaysPermitted(String uri) {
         return uri.startsWith("/users/register")
                 || uri.startsWith("/users/login")
-                || uri.startsWith("/")
+                || (uri.startsWith("/") && uri.length() == 1)
                 || uri.startsWith("/index")
                 || uri.startsWith("/films")
                 || uri.startsWith("/filmSessions")
                 || uri.startsWith("/files")
                 || uri.startsWith("/js")
-                || uri.startsWith("/css");
+                || uri.startsWith("/css")
+                || uri.startsWith("/img");
     }
 }

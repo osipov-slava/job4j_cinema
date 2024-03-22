@@ -18,11 +18,11 @@
         We have two halls, Luxury Blue Hall with 48 places and Comfortable Red Hall with 280 places
         <div class="row mb-3 mt-3">
             <div class="col-6">
-                <img th:src="@{/cinema-hall1.jpg}" class="w-100" alt="No image">
+                <img th:src="@{/img/cinema-hall1.jpg}" class="w-100" alt="No image">
                 <p>Luxury Blue Hall</p>
             </div>
             <div class="col-6">
-                <img th:src="@{/cinema-hall2.jpg}" class="w-100" alt="No image">
+                <img th:src="@{/img/cinema-hall2.jpg}" class="w-100" alt="No image">
                 <p>Comfortable Red Hall</p>
             </div>
         </div>
@@ -46,7 +46,20 @@
                         <td><a th:text="${films.get(fs.filmId).name}" th:href="@{'/films/' + ${fs.filmId}}"></a></td>
                         <td th:text="${halls.get(fs.hallId).name}"/>
                         <td th:text="${#temporals.format(fs.startTime, 'dd MMMM yyyy')}" class="text-center"/>
-                        <td class="text-center"><a th:text="${#temporals.format(fs.startTime, 'HH:mm')}" th:href="@{'/tickets/' + ${fs.id}}"></a></td>
+                        <td class="text-center">
+                            <a th:text="${#temporals.format(fs.startTime, 'HH:mm')}"
+
+                               th:href="@{/tickets/new(
+                                    sessionId=${fs.id},
+                                    title=${films.get(fs.filmId).name},
+                                    startDateTime=${fs.startTime},
+                                    hall=${halls.get(fs.hallId).name},
+                                    rows=${halls.get(fs.hallId).rowCount},
+                                    places=${halls.get(fs.hallId).placeCount},
+                                    price=${fs.price},
+                                    fileId=${films.get(fs.filmId).fileId},
+                                    )}"></a></td>
+
                         <td th:text="${#temporals.format(fs.endTime, 'HH:mm')}" class="text-center"/>
                         <td th:text="${fs.price}" class="text-end"/>
                     </tr>

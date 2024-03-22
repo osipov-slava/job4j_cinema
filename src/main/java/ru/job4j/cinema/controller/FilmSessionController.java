@@ -29,4 +29,5 @@ public class FilmSessionController {
         model.addAttribute("halls", hallService.findAll());
         return "filmSessions/list";
     }
+
 }
