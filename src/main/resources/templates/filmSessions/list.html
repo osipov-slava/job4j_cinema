@@ -43,10 +43,10 @@
                 <tbody>
                     <tr th:each="fs: ${filmSessions}">
                         <td th:text="${fs.id}" />
-                        <td th:text="${fs.film}"/>
-                        <td th:text="${fs.hall}"/>
+                        <td><a th:text="${films.get(fs.filmId).name}" th:href="@{'/films/' + ${fs.filmId}}"></a></td>
+                        <td th:text="${halls.get(fs.hallId).name}"/>
                         <td th:text="${#temporals.format(fs.startTime, 'dd MMMM yyyy')}" class="text-center"/>
-                        <td th:text="${#temporals.format(fs.startTime, 'HH:mm')}" class="text-center"/>
+                        <td class="text-center"><a th:text="${#temporals.format(fs.startTime, 'HH:mm')}" th:href="@{'/tickets/' + ${fs.id}}"></a></td>
                         <td th:text="${#temporals.format(fs.endTime, 'HH:mm')}" class="text-center"/>
                         <td th:text="${fs.price}" class="text-end"/>
                     </tr>

@@ -45,7 +45,7 @@ public class SimpleFilmServiceTest {
         when(filmRepository.findAll()).thenReturn(films);
 
         var filmDto1 = new FilmDto(1, "American Beauty", "description", 1999, "Drama", 17, 122, 1);
-        var filmDto2 = new FilmDto(2, "Dune: Part Two", "description", 2024, "Sci Fi", 13, 166, 1);
+        var filmDto2 = new FilmDto(2, "Dune: Part Two", "description", 2024, "Sci Fi", 13, 166, 2);
         var expectedFilmDtos = Map.of(1, filmDto1, 2, filmDto2);
 
         actualFilmDtos = filmService.findAll();
@@ -62,7 +62,7 @@ public class SimpleFilmServiceTest {
         var films = List.of(film2);
         when(filmRepository.findAll()).thenReturn(films);
 
-        var filmDto2 = new FilmDto(2, "Dune: Part Two", "description", 2024, "Sci Fi", 13, 166, 1);
+        var filmDto2 = new FilmDto(2, "Dune: Part Two", "description", 2024, "Sci Fi", 13, 166, 2);
         var expectedOptional = Optional.of(filmDto2);
 
         var actualOptional = filmService.findById(2);

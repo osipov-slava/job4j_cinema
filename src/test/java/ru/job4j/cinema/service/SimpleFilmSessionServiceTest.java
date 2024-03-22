@@ -3,7 +3,6 @@ package ru.job4j.cinema.service;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import ru.job4j.cinema.dto.FilmDto;
-import ru.job4j.cinema.dto.FilmSessionDto;
 import ru.job4j.cinema.model.FilmSession;
 import ru.job4j.cinema.model.Hall;
 import ru.job4j.cinema.repository.FilmSessionRepository;
@@ -51,15 +50,15 @@ public class SimpleFilmSessionServiceTest {
         var localDateTime = LocalDateTime.now();
         var filmSession1 = new FilmSession(1, 2, 1, localDateTime, localDateTime.plusHours(2), 10);
         var filmSession2 = new FilmSession(2, 2, 1, localDateTime.plusHours(3), localDateTime.plusHours(5), 10);
-        var filmSessions = List.of(filmSession1, filmSession2);
-        when(filmSessionRepository.findAll()).thenReturn(filmSessions);
+        var expected = List.of(filmSession1, filmSession2);
+        when(filmSessionRepository.findAll()).thenReturn(expected);
 
-        var filmSessionDto1 = new FilmSessionDto(1, "Dune: Part Two", "hall1", localDateTime, localDateTime.plusHours(2), 10);
-        var filmSessionDto2 = new FilmSessionDto(2, "Dune: Part Two", "hall1", localDateTime.plusHours(3), localDateTime.plusHours(5), 10);
-        var expectedDtos = List.of(filmSessionDto1, filmSessionDto2);
-        var actualDtos = filmSessionService.findAll();
+//        var filmSessionDto1 = new FilmSessionDto(1, "Dune: Part Two", "hall1", localDateTime, localDateTime.plusHours(2), 10);
+//        var filmSessionDto2 = new FilmSessionDto(2, "Dune: Part Two", "hall1", localDateTime.plusHours(3), localDateTime.plusHours(5), 10);
+//        var expectedDtos = List.of(filmSessionDto1, filmSessionDto2);
+        actual = filmSessionService.findAll();
 
-        assertThat(actualDtos).usingRecursiveComparison().isEqualTo(expectedDtos);
+        assertThat(actual).usingRecursiveComparison().isEqualTo(expected);
     }
 
 }
