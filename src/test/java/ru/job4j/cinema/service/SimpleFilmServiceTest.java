@@ -7,7 +7,10 @@ import ru.job4j.cinema.model.Film;
 import ru.job4j.cinema.model.Genre;
 import ru.job4j.cinema.repository.FilmRepository;
 
-import java.util.*;
+import java.util.Collections;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.mock;

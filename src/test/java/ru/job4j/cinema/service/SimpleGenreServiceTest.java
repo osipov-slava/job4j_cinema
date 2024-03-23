@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 import ru.job4j.cinema.model.Genre;
 import ru.job4j.cinema.repository.GenreRepository;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
@@ -28,5 +29,17 @@ public class SimpleGenreServiceTest {
         var actualGenres = genreService.findAll();
 
         assertThat(actualGenres).isEqualTo(expectedGenres);
+    }
+
+    @Test
+    public void whenFindAllWithoutData() {
+        GenreRepository genreRepository = mock(GenreRepository.class);
+        when(genreRepository.findAll()).thenReturn(Collections.emptyList());
+
+        GenreService genreService = new SimpleGenreService(genreRepository);
+
+        var actualGenres = genreService.findAll();
+
+        assertThat(actualGenres.size()).isEqualTo(0);
     }
 }

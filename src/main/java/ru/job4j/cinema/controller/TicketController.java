@@ -3,15 +3,11 @@ package ru.job4j.cinema.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import ru.job4j.cinema.dto.FilmDto;
-import ru.job4j.cinema.model.FilmSession;
-import ru.job4j.cinema.model.Hall;
 import ru.job4j.cinema.model.Ticket;
 import ru.job4j.cinema.model.User;
 import ru.job4j.cinema.service.TicketService;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.websocket.Session;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 

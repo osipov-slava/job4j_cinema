@@ -58,4 +58,10 @@ public class Sql2oUserRepositoryTest {
         sql2oUserRepository.save(user);
         assertThat(sql2oUserRepository.save(user)).isEqualTo(empty());
     }
+
+    @Test
+    public void whenDeleteUserByWrongId() {
+        var result = sql2oUserRepository.deleteById(2);
+        assertThat(result).isFalse();
+    }
 }

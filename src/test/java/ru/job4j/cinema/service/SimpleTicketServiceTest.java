@@ -1,6 +1,5 @@
 package ru.job4j.cinema.service;
 
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import ru.job4j.cinema.model.Ticket;

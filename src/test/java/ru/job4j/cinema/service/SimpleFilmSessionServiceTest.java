@@ -53,9 +53,6 @@ public class SimpleFilmSessionServiceTest {
         var expected = List.of(filmSession1, filmSession2);
         when(filmSessionRepository.findAll()).thenReturn(expected);
 
-//        var filmSessionDto1 = new FilmSessionDto(1, "Dune: Part Two", "hall1", localDateTime, localDateTime.plusHours(2), 10);
-//        var filmSessionDto2 = new FilmSessionDto(2, "Dune: Part Two", "hall1", localDateTime.plusHours(3), localDateTime.plusHours(5), 10);
-//        var expectedDtos = List.of(filmSessionDto1, filmSessionDto2);
         actual = filmSessionService.findAll();
 
         assertThat(actual).usingRecursiveComparison().isEqualTo(expected);

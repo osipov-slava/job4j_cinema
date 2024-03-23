@@ -60,10 +60,8 @@ public class Sql2oTicketRepositoryTest {
     }
 
     @Test
-    public void whenDeleteTicket() {
-        var ticket = new Ticket(1, 1, 1, 1, 1);
-        sql2oTicketRepository.save(ticket);
-        sql2oTicketRepository.deleteById(ticket.getId());
-        assertThat(sql2oTicketRepository.findById(ticket.getId())).isEqualTo(empty());
+    public void whenDeleteTicketByWrongId() {
+        var result = sql2oTicketRepository.deleteById(2);
+        assertThat(result).isFalse();
     }
 }

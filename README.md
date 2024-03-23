@@ -5,13 +5,16 @@
 Registration and Login pages. 
 * For authorized user accessible buying tickets. Successfully or not notification.
 * No administrative part, data is updated through the database.
-* Posters keep in not static folder.
+* Posters are keeping in not static folder.
 
 ### Technologies
-Spring Boot, Thymeleaf, Bootstrap, Liquibase, Sql2o, PostgreSQL, H2, Mockito
+Spring Boot, Thymeleaf, Bootstrap, Liquibase, Sql2o, PostgreSQL, H2, Mockito, JaCoCo
 
 ### Patterns
 Model View Controller(MVC), Data Transfer Object(DTO)
+
+### Code Coverage
+62%
 
 ### Environment
 Java 17, Maven 3.9.2, PostgreSql 16
